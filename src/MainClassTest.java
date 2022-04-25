@@ -6,13 +6,24 @@ public class MainClassTest {
 
     @Test
     public void testGetLocalNumber() {
-        int expectedNumber  = 14;
-        int actualNumber    = testClass.getLocalNumber();
+        int localNumberExpected  = 14;
+        int localNumberActual    = testClass.getLocalNumber();
 
         Assert.assertEquals(
-                "Numbers are not equals: " + expectedNumber + " != " + actualNumber,
-                expectedNumber,
-                actualNumber
+                "Numbers are not equal: " + localNumberExpected + " != " + localNumberActual + ".",
+                localNumberExpected,
+                localNumberActual
+        );
+    }
+
+    @Test
+    public void testGetClassNumber() {
+        int classNumberLowLimit = 45;
+        int classNumberActual   = testClass.getClassNumber();
+
+        Assert.assertTrue(
+                "Number " + classNumberActual + " is less than " + classNumberLowLimit + " or equal to it.",
+                classNumberActual > classNumberLowLimit
         );
     }
 }
